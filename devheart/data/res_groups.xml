@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data  >
+
+
+	<!-- Rules-->
+
+        <!-- readoonly  Proect -->
+        <record id="readonly_project" model="ir.rule">
+            <field name="name" >Readonly Project</field>
+            <field name="model_id" ref="project.model_project_project" />
+            <field name="domain_force" >[('user_id','=',user.id)]</field>
+            <field name="perm_read" >1</field>
+            <field name="perm_write" >1</field>
+            <field name="perm_create" >1</field>
+            <field name="perm_unlink" eval="False"  />
+        </record>
+
+        <!-- Edit own user-->
+        <record id="edit_own_user" model="ir.rule">
+            <field name="name" >Edit own User</field>
+            <field name="model_id" ref="base.model_res_users" />
+            <field name="domain_force" >[('id','=',user.id)]</field>
+            <field name="perm_read" eval="False"  />
+            <field name="perm_write" eval="True"  />
+            <field name="perm_create" eval="False"  />
+            <field name="perm_unlink" eval="False"  />
+        </record>
+
+        <!-- Edit own partner-->
+        <record id="edit_own_partner" model="ir.rule">
+            <field name="name" >Edit own partner</field>
+            <field name="model_id" ref="base.model_res_partner" />
+            <field name="domain_force" >['!','|',('create_uid','=',user.id),('related_user','=',user.id),('user_id','=',user.id)]</field>
+            <field name="perm_read" eval="False"  />
+            <field name="perm_write" eval="True"  />
+            <field name="perm_create" eval="False"  />
+            <field name="perm_unlink" eval="False"  />
+        </record>
+        <!-- Contributor-->
+    	<record id="devheart_res_groups_contributor" model="res.groups" >
+    		<field name="name">Devheart Contibutor</field>
+            <field name="implied_ids" eval="[ (4, ref('base.group_user')), (4, ref('base.group_sale_salesman')), (4, ref('project.group_project_user'))]"/>
+            <field name="menu_access" eval="[ (4, ref('devheart.menu_my_backend_home'))]"/>
+            <field name="rule_groups" eval="[(4, ref('devheart.readonly_project')),(4, ref('devheart.edit_own_user')), (4, ref('devheart.edit_own_partner'))]"/>
+    	</record>
+
+	<!-- Users-->
+        <record id="devheart_user" model="res.users">
+            <field name="name">Devheart User</field>
+            <field name="login">User</field>
+            <field name="active"  eval="False"  />
+            <field name="lang">fr_FR</field>
+            <field name="groups_id" eval="[ (4, ref('devheart.devheart_res_groups_contributor'))]"/>
+        </record>
+
+
+    </data>
+</openerp>

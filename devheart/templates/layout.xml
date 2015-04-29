@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="assets_backend" name="google_drive assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/google_drive/static/src/js/gdrive.js"></script>
+            </xpath>
+        </template>
+
+        <template id="assets_fix" inherit_id="website.layout" name="Assets Fix">
+            <xpath expr='//t[@t-call-assets="website.assets_frontend"][@t-js]' position="after">
+                <style id="style_fix">
+                    /* STYLE FIXE */
+                </style>
+                <t t-call-assets="devheart.devheart_assets" t-js="false"/>
+            </xpath>
+            <xpath expr='//t[@t-call-assets="website.assets_frontend"][@t-css]' position="after">
+                <script id="script_fix">
+                    // SCRIPT FIX
+                </script>
+                <t t-call-assets="devheart.devheart_assets" t-css="false"/>
+            </xpath>
+        </template>
+
+
+        <template id="editor_head_assets_fix" inherit_id="website.editor_head" name="Editor Assets Fix" groups="base.group_website_publisher,base.group_website_designer">
+            <xpath expr='//t[@t-call-assets="website.assets_frontend"][@t-js]' position="attributes">
+                <attribute name="expr">//style[@id='style_fix']</attribute>
+                <attribute name="position">before</attribute>
+            </xpath>
+
+            <xpath expr='//t[@t-call-assets="website.assets_frontend"][@t-css]' position="attributes">
+                <attribute name="expr">//script[@id='script_fix']</attribute>
+                <attribute name="position">before</attribute>
+            </xpath>
+        </template>
+
+
+        <template id="devheart_assets" name="Devheart assets" >
+
+            <!-- icons -->
+            <link rel="apple-touch-icon" sizes="57x57" href="/devheart/static/src/assets/img/icons/apple-icon-57x57.png" />
+            <link rel="apple-touch-icon" sizes="60x60" href="/devheart/static/src/assets/img/icons/apple-icon-60x60.png" />
+            <link rel="apple-touch-icon" sizes="72x72" href="/devheart/static/src/assets/img/icons/apple-icon-72x72.png" />
+            <link rel="apple-touch-icon" sizes="76x76" href="/devheart/static/src/assets/img/icons/apple-icon-76x76.png" />
+            <link rel="apple-touch-icon" sizes="114x114" href="/devheart/static/src/assets/img/icons/apple-icon-114x114.png" />
+            <link rel="apple-touch-icon" sizes="120x120" href="/devheart/static/src/assets/img/icons/apple-icon-120x120.png" />
+            <link rel="apple-touch-icon" sizes="144x144" href="/devheart/static/src/assets/img/icons/apple-icon-144x144.png" />
+            <link rel="apple-touch-icon" sizes="152x152" href="/devheart/static/src/assets/img/icons/apple-icon-152x152.png" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/devheart/static/src/assets/img/icons/apple-icon-180x180.png" />
+            <link rel="icon" type="image/png" sizes="192x192"  href="/devheart/static/src/assets/img/icons/android-icon-192x192.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/devheart/static/src/assets/img/icons/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="96x96" href="/devheart/static/src/assets/img/icons/favicon-96x96.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/devheart/static/src/assets/img/icons/favicon-16x16.png" />
+            <link rel="manifest" href="/devheart/static/src/assets/img/icons/manifest.json" />
+            <meta name="msapplication-TileColor" content="#ffffff" />
+            <meta name="msapplication-TileImage" content="/devheart/static/src/assets/img/icons/ms-icon-144x144.png" />
+            <meta name="theme-color" content="#ffffff" />
+
+
+            <link rel="shortcut icon" href="/devheart/static/src/assets/img/icone.png" type="image/png" />
+            <link rel="icon" href="/devheart/static/src/assets/img/icone.png" type="image/png" />
+
+            <!-- End icons -->
+
+ <link rel="stylesheet" href="/devheart/static/src/assets/bootstrap32/css/bootstrap.css"/>
+<link rel="stylesheet" href="/devheart/static/src/assets/js/jquery-ui-1.11.1/jquery-ui.css"/> 
+
+
+<!-- CSS Framework (Normalize + Skeleton) -->
+<link href="/devheart/static/src/assets/css/framework.css" rel="stylesheet"/>
+
+<!-- Core CSS -->
+<link href="/devheart/static/src/assets/css/typography.css" rel="stylesheet"/>
+<link href="/devheart/static/src/assets/css/main.css" rel="stylesheet"/>
+<link href="/devheart/static/src/assets/css/widgets.css" rel="stylesheet"/>
+<link href="/devheart/static/src/assets/css/form.css" rel="stylesheet"/>
+<link href="/devheart/static/src/assets/css/icons.css" rel="stylesheet"/>
+
+<!-- Theme Colors CSS -->
+<link href="/devheart/static/src/assets/css/colors.css" rel="stylesheet"/>
+
+<!-- Le Fonts -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet"/>
+<link href="/devheart/static/src/assets/css/fonts/glyphicons/style.css" rel="stylesheet"/>
+
+<!-- External Plugin CSS -->
+<link rel="stylesheet" href="/devheart/static/src/assets/css/customizer.css"/>
+
+<link rel="stylesheet" href="/devheart/static/src/plugins/flexslider/flexslider.css"/>
+<link rel="stylesheet" href="/devheart/static/src/plugins/nivo/nivo-slider.css"/>
+<link rel="stylesheet" href="/devheart/static/src/plugins/revolutionslider/css/settings.css"/>
+
+
+<!-- odoo -->
+
+<style type="text/css">
+    /* otherwise, warning in  console */
+    .caroufredsel_wrapper{
+    width:360px !important;
+    }
+
+    /*hide native logo*/
+    a.navbar-brand  {
+    display:none;
+    visibility:hidden;
+    }
+
+    /*stick footer bottom to page bottom*/
+    #footer-bottom {
+    position: absolute;
+    width: 100%;
+    }
+</style>
+<!-- for the carroussel in the portfolio page-->
+<style type="text/css" >
+    /* Carousel Styles for the buttons*/
+
+    .btn-min-block {
+    min-width: 170px;
+    line-height: 26px;
+    }
+
+    .btn-theme {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    margin-right: 15px;
+    }
+
+    .btn-theme:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+    }
+</style>
+
+                <!--
+                <script src="/devheart/static/src/assets/bootstrap32/js/bootstrap.js"></script>
+                -->
+                <!-- Twitter & Flickr -->
+                <script src="/devheart/static/src/plugins/tweet/jquery.tweet.js"></script>
+                <script src="/devheart/static/src/plugins/jflickrfeed/jflickrfeed.min.js"></script>
+
+                <!-- FitVids for Fluid Videos -->
+                <script src="/devheart/static/src/plugins/fitvids/jquery.fitvids.js"></script>
+
+                <!-- isotope for filterable Portfolio -->
+                <script src="/devheart/static/src/plugins/isotope/jquery.isotope.min.js"></script>
+
+                <!-- Sharrre for Social Sharing Buttons -->
+                <script src="/devheart/static/src/plugins/sharrre/jquery.sharrre-1.3.4.min.js"></script>
+
+                <!-- FlexSlider -->
+                <script src="/devheart/static/src/plugins/flexslider/jquery.flexslider-min.js"></script>
+
+                <!-- Nivo Slider -->
+                <script src="/devheart/static/src/plugins/nivo/jquery.nivo.slider.pack.js"></script>
+
+                <!-- Google Maps Script -->
+                <script src="/devheart/static/src/plugins/map/gmap3.min.js"></script>
+
+                <!-- Revolution Slider Script -->
+                <script src="/devheart/static/src/plugins/revolutionslider/js/jquery.themepunch.plugins.min.js"></script>
+                <script src="/devheart/static/src/plugins/revolutionslider/js/jquery.themepunch.revolution.min.js"></script>
+
+                <!-- CarouFredSel Script -->
+                <script src="/devheart/static/src/plugins/caroufredsel/jquery.carouFredSel-6.1.0-packed.js"></script>
+                <script src="/devheart/static/src/plugins/caroufredsel/jquery.touchSwipe.min.js"></script>
+
+                <!-- Template Script -->
+                <script src="/devheart/static/src/assets/js/custom.plugins.js"></script>
+                <script src="/devheart/static/src/assets/js/custom.setup.js"></script>
+
+                <!-- Color Customizer Script -->
+                <script src="/devheart/static/src/assets/js/custom.customizer.js"></script>
+
+                <!-- End JS Files -->
+
+
+                <!-- Newsletter subscription-->
+                <script>
+                    $( "#FormNews" ).submit(function( event ) {
+                    var vals = {
+                    contact_name:$('#emailnews').val(),
+                    email_from:$('#emailnews').val(),
+                    name:"Newsletter request",
+                    description:"Newsletter request for " + $('#emailnews').val(),
+                    };
+
+                    $.ajax({
+                    type: "POST",
+                    url: "/crm/contactus",
+                    data:vals,
+                    }).done(function( data ) {
+                    if (!data) {
+                    return;
+                    }
+                    $('#newsletter-request').replaceWith("<h3>Inscription reussie. Merci!</h3>");
+                    $( "#FormNews" ).val('');
+                    });
+                    event.preventDefault();
+                    });
+                </script>
+        </template>
+
+        <template id="layout" name="Devheart - Layout" inherit_id="website.layout" >
+
+            <!-- Remove language templates -->
+            <xpath expr="//t[@t-if='request and request.website_multilang and website']" position="replace"/>
+
+            <!-- Add canonical -->
+            <xpath expr="//title" position="after">
+                <t t-if="website_meta_canonical">
+                    <t t-foreach="website_meta_canonical" t-as="canonical">
+                        <link rel="canonical" t-att-href="canonical"/>
+                    </t>
+                </t>
+                <t t-if="website_meta_robot">
+                    <meta name="robots" t-att-content="website_meta_robot"/>
+                </t>
+            </xpath>
+
+            <xpath expr='//t[@t-call-assets="web.assets_common"]' position="before">
+                <link rel="stylesheet" href="/devheart/static/src/assets/css/reset.css"/>
+            </xpath>
+
+            <!-- head -->
+            <xpath expr="//head" position="inside">
+                <meta name="author" content="Yassine El Ghali"/>	
+            </xpath>
+
+            <xpath expr="//head//meta[@name='viewport']" position="replace">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            </xpath>
+
+            <!-- body attributes -->
+
+            <xpath expr="//body" position="attributes">
+                <attribute name="data-spy">scroll</attribute>
+                <attribute name="style">background-color: #FFF;</attribute>
+                <attribute name="data-target">.nav-menu</attribute>
+                <attribute name="data-offset">50</attribute>
+            </xpath> 
+
+
+        </template>
+
+
+    </data>
+</openerp>

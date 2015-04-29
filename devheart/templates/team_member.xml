@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="team_member" name="Devheart - team member" page="True">
+            <div class=""> 
+
+                <div class="container"  style="overflow_x:hidden;">
+                    <div class="four columns">
+                        <img itemprop="image medium" class="media-object dp img-circle center-block img img-responsive" 
+                            t-att-src="website.image_url(member, 'image', '160x160')"  
+                            name="aboutme" />
+                        <ul class="list-inline text-center" title="Social Links">
+                            <t t-if="member.social_twitter" >
+                                <li><a t-att-href="member.social_twitter" title="Twitter Feed" rel="nofollow" target="_blank"><span class="fa fa-twitter fa-lg"></span></a></li> 
+                            </t>
+                            <t t-if="member.social_facebook" >
+
+                                <li><a t-att-href="member.social_facebook" title="Facebook Wall" target="_blank" rel="nofollow"><span class="fa fa-facebook fa-lg"></span></a></li></t>
+                            <t t-if="member.social_linkedin" >
+
+                                <li><a t-att-href="member.social_linkedin" title="LinkedIn Profile" target="_blank" rel="nofollow"><span class="fa fa-linkedin fa-lg"></span></a></li>
+                            </t>
+                            <t t-if="member.social_skype" >
+
+                                <li><a t-att-href="member.social_skype" title="Skype" target="_blank" rel="nofollow"><span class="fa fa-skype fa-lg"></span></a></li>
+                            </t>
+                        </ul>
+                    </div>
+
+                    <div class="eight columns">
+                        <h3 class="media-heading">
+                            <t t-esc="member.name"></t>
+                            <small style="font-size:14px;"><t t-esc=" ' - %s' % member.parent_id.name if member.parent_id.name else '' " /></small> 
+                        </h3>
+                        <div  t-field="member.login" />
+                        <hr style="margin:8px auto"/> 
+                        <div  t-field="member.biography" t-if="member.biography" width="60%"/>
+                        <t t-foreach="member.skills" t-as="skill" >
+                            <span class="label label-success tags" t-esc="skill.name"></span>
+                        </t>
+                    </div>
+                    
+                </div>
+
+                        <hr style="margin:8px auto"/> 
+            </div>
+        </template>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data >
+
+
+    	<!-- res company, edit main company-->
+    	<record id="base.main_company" model="res.company">
+    		<field name="name">Développeurs du coeur</field>
+                <field name="website">http://developpeursducoeur.org</field>
+    		<field name="email">developpeursducoeur@gmail.com</field>
+                <field name="custom_footer">False</field>
+    	</record>
+
+        <!-- French dates for english language-->
+        <record id="base.lang_en" model="res.lang" >
+            <field name="date_format">%d/%m/%Y</field>
+        </record>
+
+
+    </data>
+</openerp>

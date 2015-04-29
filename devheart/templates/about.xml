@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <template id="about" name="About" page="True">
+
+            <t t-call="website.layout" >
+
+                <div id="wrap" class="">
+                    <!-- Main Content -->
+                    <section id="main-content">
+
+
+                        <!-- Headline Widget -->
+                        <div class="headline">
+                            <div class="container">
+                                <div class="sixteen columns">
+                                    Développeurs du coeur relie les organismes à buts non lucratifs avec des bénévoles 
+                                    pour adresser leurs besoins et les aider à mieux se développer.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Headline Widget -->
+
+                            <div class="page-header" >
+                                <h3>Comment ça marche ?</h3>
+                            </div>
+                            <!-- end div comment ca marche-->
+
+                        <div class="container">
+
+
+                            <!-- Highlights Widget -->
+                            <div class="highlights clearfix">
+                                <div class="two-third column highlight-item">
+                                    <div class="icon">
+                                        <i class="icon-home"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h3>L'oganisation</h3>
+                                        <p>Vous nous contactez pour étudier un besoin particulier 
+                                            ou pour vous aider à améliorer la gestion de votre activité ou votre visibilité sur le net.</p>
+                                        <p>
+                                        Nous étudions votre demande et publions un projet pour vous dans la plateforme. 
+                                        </p>
+                                            Actuellement, nous proposons les projets suivants:
+                                            <ul class="check-list" >
+                                                <li>Présence sur le web: Vidéos de présentation, visibilité sur les réseaux sociaux,..</li>
+                                                <li>Design de logos et affiches</li>
+                                                <li>Développement de sites web</li>
+                                                <li>Développement de loigciels: gestion des contacts, gestion des documents,.</li>
+                                            </ul>
+                                    </div>
+                                </div>
+
+                                <div class="two-third column highlight-item">
+                                    <div class="icon">
+                                        <i class="icon-group"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h3>Les bénévoles</h3>
+                                        <p>
+                                            Que vous soyez débutants ou expérimentés, vous pouvez rejoindre l'équipe d'un projet et commencer à traiter les tâches. 
+                                        </p>
+                                        <p>Nous avons besoins de compétences différentes: 
+                                            marketing / communications, community management, développement, design, gestion de projets,..</p>
+                                        <p>
+
+                                        </p>
+                                        <p>
+                                            Pour chaque projet, un bénévole se porte volontaire pour être le <span class="" >coordinateur</span>. Il a pour objectif de tester et valider les tâches et de suivre l'avancement du projet avec l'organisation cliente.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="two-third column highlight-item">
+                                    <div class="icon">
+                                        <i class="icon-display"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h3>La plateforme</h3>
+                                        <p>
+                                            La plateform intègre plusieurs outils pour faciliter la communication et la collaboration entre les bénévoles. 
+                                        </p>
+                                            <ul class="check-list" >
+                                                <li>Une messagerie interne, où vous recevez les notifications de vos projets</li>
+                                                <li>Gestion des documents (photos, pdfs, etc.)</li>
+                                                <li>Suivi et validation des tâches</li>
+                                                <li>Un cahier de charge collaboratif (integré à Google Drive)</li>
+                                                <li>Intégration de Github: Associations des tâches aux commits, diffs, logs</li>
+                                            </ul>
+                                    </div>
+                                </div>
+                                <!-- END Highlights Widget -->
+
+
+                            </div>
+
+                            </div>
+
+                        </section>
+                    </div>
+                </t>
+
+            </template>
+
+
+        </data>
+    </openerp>

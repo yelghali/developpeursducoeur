@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="project_form_view" model="ir.ui.view">
+            <field name="name">project.form.view</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <newline />
+		    <div name="options_active"  invisible="1" />
+                    <field name="customer_contact" string="Customer contact"/>
+                </field>
+
+                <xpath expr="//group[@string='Administration']" position="after">
+                    <group string="Tags" attrs="{ 'readonly' : [('user_id','!=',1)] }"  >
+                        <field name="addressed_issues" widget="many2many_tags" string="Type de projet"  groups="devheart.devheart_res_groups_contributor" />
+                        <field name="skills" widget="many2many_tags" string="Skills"/>
+                        <newline/>
+                        <field name="website_url" string="Website URL" />
+                    </group>
+                </xpath>
+                <!--
+                <xpath expr="//page[@string='project_stages']" position="after" >
+                    <page string="Vision document">
+                        <field name="description_pad" widget="pad"/>
+                    </page>
+                </xpath>
+                -->
+                <xpath expr="//div[@class='oe_title']" position="replace">
+                    <field name="image" widget="image" class="oe_avatar oe_left" options="{&quot;preview_image&quot;: &quot;image_medium&quot;}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                        <field name="use_tasks" invisible="True"/>
+                    </div>
+                </xpath>
+
+                <xpath expr="//page[@string='Other Info']" position="after" >
+                    <page name="website" string="Description Web" >
+                        <group>
+                            <!-- <field name="short_desc" /> -->
+                            <field name="long_desc"  attrs="{ 'readonly' : [('user_id','!=',1)] }" string="Description"/>
+                        </group>
+
+                    </page>
+                </xpath>
+
+                <xpath expr="//page[@string='Other Info']" position="attributes" >
+                    <attribute name="string">Description</attribute>
+                </xpath>
+
+                <field name="customer_contact" position="attributes" >
+                    <attribute name="string">Contact chez l'organisation</attribute>
+                </field>
+
+                <field name="partner_id" position="attributes" >
+                    <attribute name="string">Oragnisation</attribute>
+                </field>
+
+                <field name="user_id" position="attributes" >
+                    <attribute name="string">Coordinateur</attribute>
+                </field>
+
+                <xpath expr="//group[@name='group_alias']" position="replace" >
+                    <group name="group_alias" attrs="{'invisible': [('alias_domain', '=', False)]}">
+                        <label for="alias_name" string="Email Alias"/>
+                        <div name="alias_def">
+                            <field name="alias_id" class="oe_read_only oe_inline" string="Email Alias" required="0" readonly="1" />
+                            <div class="oe_edit_only oe_inline" name="edit_alias" style="display: inline;">
+                                <field name="alias_name" class="oe_inline" readonly="1" />@<field name="alias_domain" class="oe_inline" readonly="1" />
+                            </div>
+                        </div>
+                        <label for="alias_model" string="Incoming Emails create"/>
+                        <field name="alias_model" class="oe_inline" nolabel="1" readonly="1"/>
+                        <field name="alias_contact" class="oe_inline" string="Accept Emails From" readonly="1"/>
+                    </group>
+                </xpath>
+                <field name="type_ids" position="replace"> 
+                    <field name="type_ids" readonly="0"/>
+                </field>
+
+            </field>
+        </record>
+
+
+
+        <!-- TASK-->
+        <record id="project_task_form_view" model="ir.ui.view">
+            <field name="name">project.task.form.view</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@string='Description']" position="attributes" >
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+               
+                <xpath expr="//field[@name='partner_id']" position="attributes" >
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="submenu" name="Devheart Submenu">
+            <li t-if="not submenu.child_id" t-att-class=" 
+                ((submenu.url != '/' and request.httprequest.path.startswith(submenu.url)) or
+                request.httprequest.path == submenu.url) and 'active'
+                ">  
+                <a t-att-href="(website.menu_id.child_id[0] == submenu) and '/' or submenu.url" t-ignore="true" t-att-target="'blank' if submenu.new_window else None" > 
+                    <span t-field="submenu.name"/>
+                </a>
+            </li>       
+            <li t-if="submenu.child_id" t-attf-class="dropdown #{
+                ((submenu.url != '/' and [1 for submenu in submenu.child_id if request.httprequest.path.startswith(submenu.url)]) or
+                request.httprequest.path == submenu.url) and 'active'
+                }">
+                <a  href="#">
+                    <span t-field="submenu.name"/> <span  t-ignore="true"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <t t-foreach="submenu.child_id" t-as="submenu">
+                        <t t-call="website.submenu"/>
+                    </t>
+                </ul>
+            </li>
+        </template>
+
+
+        <template id="do_not_show_sign_in" inherit_id="website.show_sign_in" name="Devheart- Dont show sign in">
+            <xpath expr="//li[@class='divider']" position="replace" />
+            <xpath expr="//li/a" position="replace" />
+        </template>
+
+        <template id="header" inherit_id="website.layout" name="Devheart- Header">
+
+<xpath expr="//header/div[@class='navbar navbar-default navbar-static-top']" position="attributes">
+				<attribute name="style">display:none;visibility:hidden</attribute>
+			</xpath>
+
+            <xpath expr="//header" position="replace">
+                <header id="main-header" >
+
+                                    <!-- for native js to work-->
+                                    <a class="navbar-brand" style="display:none;visibility:hidden"/>
+                    <!-- Top Header -->
+                    <div id="header-top">
+                        <div class="container">
+                            <div class="sixteen columns">
+
+                                <!-- Logo Container -->
+                                <div id="logo-container">
+                                    <div id="logo-center">
+                                        <a href="/">
+                                            <img src="/devheart/static/src/assets/img/logo.png" alt="DéveloppeursduCoeur" 
+                                                style=" 
+                                                width: 300px;
+                                                height: 57px;
+                                                margin-top: -10px;
+                                                margin-left: -30px;
+                                                "/>
+
+                                        </a>
+                                            <div class="tagline" >(Beta)</div>
+                                    </div>
+                                </div>
+                                <!-- END Logo Container -->
+
+
+                                <!-- Main Navigation -->
+                                <nav id="main-nav">
+                                    <!-- for native js to work-->
+                                    <ul class="nav navbar-nav" style="display:none;visibility:hidden"/>
+
+                                    <ul  id="top_menu">
+                                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                            <t t-call="devheart.submenu"/>            
+                                        </t>                                     
+                                        <li class="divider" t-ignore="true" />
+                                        <li class="dropdown" t-ignore="true" >
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                <b>
+                                                    <span  >Mon espace</span>
+                                                    <!--
+                                                    <span t-if="not user_id.active" >Mon espace</span>
+                                                    <t  t-if="user_id.active">
+                                                        <span t-esc="(len(user_id.name)&gt;25) and (user_id.name[:23]+'...') or user_id.name"
+                                                            />
+                                                    </t>
+                                                    -->
+                                                </b>
+                                            </a>
+                                            <ul  style="background-color:#FFF;font-weight:bold; ">
+                                                <li><a href="/web" role="menuitem">MON COMPTE</a></li>
+                                                <!-- <li><a href="/my-projects" role="menuitem">MES PROJETS</a></li>-->
+                                                <t t-if="user_id.active">
+                                                    <li><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">SE DECONNECTER</a></li>
+                                                </t>
+                                            </ul>
+                                        </li>   
+                                    </ul>    
+
+                                </nav>
+                                <!-- END Main Navigation -->
+                            </div>
+                        </div>
+
+                    </div>
+
+                </header> 
+                <!-- END Main Header -->
+                <section class='inner hidden-sm hidden-md hidden-lg marginMobile'></section>
+            </xpath>
+        </template>
+
+    </data>
+</openerp>

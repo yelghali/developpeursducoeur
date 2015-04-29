@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+
+
+        <template id="task_kanban_card" name="TaskKanban">
+            <div class="thumbnail" t-att-id="'task_'+str(object_id.id)">
+                <a t-attf-href="/web#model=project.task&amp;id=#{object_id.id}"><span t-field="object_id.name"/></a>
+                <div>
+                    <t t-if="object_id.user_id">
+                        Assignée à <span t-field="object_id.user_id"/>
+                    </t>
+                    <t t-if=" not object_id.user_id">
+                        <a t-att-href="'/project/'+slug(object_id.project_id)+'/task/'+slug(object_id)+'/assign'" > 
+                            <span>Traiter cette tâche  </span>
+                        </a>
+                        <span  class="icon-unshare" /> 
+                    </t>
+                </div>
+                <div class="tag-labels">
+                    <span t-foreach="object_id.categ_ids" t-as="categ_id" >
+                        <span t-esc="categ_id.name" class="label label-success"/>
+                    </span>
+                </div>
+                <small>
+                    <i class="fa fa-clock-o"></i>Début : <span t-field="object_id.date_start"/><br/>
+                    <t t-if="object_id.date_end"> Fin : <span t-field="object_id.date_end"/></t>
+                </small>
+                <br />
+                <t t-if="object_id.google_drive_url" > 
+                    <div class="portfolio-meta">
+                        <span><i class="icos-500px small"></i> <a t-att-href="object_id.google_drive_url" target="_blank" rel="nofollow" >Description </a></span>
+                    </div>
+                </t>
+            </div>
+        </template>
+
+        <template id="project-single" name="Project single" page="True">
+
+            <t t-call="website.layout" >
+
+
+                <div id="wrap" class="oe_not_editable"  >
+                    <!-- Main Content -->	
+                    <section id="main-content">
+
+                        <div class="container sixteen columns" >
+
+                            <!-- Page Header -->
+                            <div class="page-header">
+                                <div class="" >
+                                    <div class="row" t-ignore="True">
+                                        <div class="col-md-10">
+                                            <h1 style="padding:0px 0px 0px">
+                                                <div t-field="project.name" contentEditable="false">le nom de votre projet</div>
+                                                <!--    <div>
+                                                    <small t-field="project.short_desc" >ici une description courte de votre projet ou association</small>
+                                                </div> -->
+                                            </h1>
+
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <t t-call="devheart.state-display" /> 
+                                        </div>
+
+                                        <div  class="col-md-12" t-if="not project.user_id">
+                                            <div  class="alert alert-danger" style=" font-size:13px;float:right;">
+                                                <a href="#" class="close" data-dismiss="alert">
+                                                    <![CDATA[ &times;]]>
+                                                </a>
+                                                Ce projet a besoin d'un coordinateur!
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Page Header -->
+
+                            <!-- Projects Details -->
+
+                            <div class="portfolio row">
+                                <!-- start twelve columns-->
+                                <div class="twelve columns">
+                                    <div class="flexslider" >
+                                        <ul  class="slides">
+                                            <li >
+                                                <t t-if="project.image" > 
+                                                    <div itemprop="image" t-field="project.image" t-field-options='{"widget": "image", "class": "small", "style" : "height:350px;border:1px solid #eee;"}'/>
+                                                </t>
+                                                <t t-if=" not project.image" > 
+                                                    <img src="http://www.coaster33.co.uk/Argo%20-%20Dunstaffnage.jpg" 
+                                                        style="height:350px;border:1px solid #eee;" alt=""/>
+                                                </t>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end twelve columns-->
+                                <!-- start four columns-->
+                                <div class="four columns" style="top:-2%;">
+                                    <div class="underline-heading" contentEditable="false" enable_editor="false">
+                                        <h3>Type de projet</h3>
+                                    </div>
+                                    <div class="tag-labels">
+                                        <t t-foreach="project.addressed_issues" t-as="ai">
+                                            <a href="#"><span class="label label-success" style=""><t t-esc="ai.name" /></span></a>
+                                        </t>
+                                    </div>
+                                    <div class="underline-heading">
+                                        <h3>Compétences requises</h3>
+                                    </div>
+                                    <div class="tag-labels">
+                                        <t t-foreach="project.skills" t-as="skill">
+                                            <a href="#"><span class="label label-primary"><t t-esc="skill.name" /></span></a>
+                                        </t>
+
+                                    </div>
+                                    <br/>
+                                    <div class="portfolio-meta">
+                                        <t t-if-="project.git_path">
+                                            <span>
+                                                <i class="icos-github"></i> 
+                                                <a t-att-href="project.git_path" target="_blank" rel="nofollow" >Lien Github</a>
+                                            </span>
+                                        </t>
+                                        <t t-if="project.google_drive_url" >
+                                            <span><i class="icos-500px small"></i> 
+                                                <a t-att-href="project.google_drive_url" target="_blank" rel="nofollow" >
+                                                    Accéder au cahier de charges
+                                                </a>
+                                            </span>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio row">
+                                <div class="twelve columns" >
+<!-- Sidebar Section -->
+                                        <div  t-field="project.long_desc">
+                                            <div >
+                                                <h2>Votre besoin</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit mollis tristique. Aliquam nunc tellus, congue id pretium nec, semper non nisl. Curabitur ullamcorper velit ut augue pulvinar fringilla. Nullam sed lacus erat. Donec sollicitudin vestibulum mauris, vel adipiscing ante aliquet in. Proin nisi nibh, vulputate ut commodo ut, dictum sit amet nibh. Integer odio metus, accumsan id hendrerit eget, vulputate at quam. Sed laoreet nisi quis massa posuere malesuada. Cras quis nisl vitae lacus feugiat luctus. Mauris dui purus, faucibus in ultrices non, fermentum sed justo.</p>
+                                            </div>
+
+                                            <div >
+                                                <h2>Que dois vous apporter la solution à développer ? Elle devrait Vous aider à effectuer quelles tâches ? Répondre à quelles questions</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit mollis tristique. Aliquam nunc tellus, congue id pretium nec, semper non nisl. Curabitur ullamcorper velit ut augue pulvinar fringilla. Nullam sed lacus erat. Donec sollicitudin vestibulum mauris, vel adipiscing ante aliquet in. Proin nisi nibh, vulputate ut commodo ut, dictum sit amet nibh. Integer odio metus, accumsan id hendrerit eget, vulputate at quam. Sed laoreet nisi quis massa posuere malesuada. Cras quis nisl vitae lacus feugiat luctus. Mauris dui purus, faucibus in ultrices non, fermentum sed justo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end twelve columns-->
+                                    <!-- start four  columns-->
+                                    <div class="four columns">
+
+                                        <div class="underline-heading">
+                                            <h2>Contact</h2>
+                                        </div>
+                                            <t t-if="project.customer_contact">
+                                                <div class="container"  style="overflow_x:hidden;">
+                                                    <img itemprop="image small" class="media-object dp img-circle center-block img img-responsive" 
+                                                        t-att-src="website.image_url(project.customer_contact, 'image', '40x40')"  
+                                                        name="aboutme" />
+                                                    <ul class="list-inline text-center" title="contact client">
+                                                        <li><h4 t-esc="project.customer_contact.name" width="100%"/></li>
+                                                        <li><span t-esc="project.customer_contact.login"  width="100%"/></li>
+                                                    </ul>
+                                                </div>
+                                            </t>
+                                        <address style="text-align:center;">
+                                            <t t-if="project.partner_id.street">
+                                                <strong><t t-esc="project.partner_id.name"></t></strong><br/>
+                                            </t>
+                                            <t t-if="project.partner_id.street"> <t t-esc="project.partner_id.street"/><br/></t>
+                                            <t t-if="project.partner_id.street2"> <t t-esc="project.partner_id.street2"/><br/></t>
+                                            <t t-if="project.partner_id.zip"> <t t-esc="project.partner_id.zip +', '" /></t>
+                                            <t t-if="project.partner_id.city"> <t t-esc="project.partner_id.city" /><br/></t>
+                                            <t t-if="project.partner_id.country_id"> <t t-esc="project.partner_id.country_id.name" /><br/></t>
+                                            <t t-if="project.partner_id.phone" >
+                                                <t t-esc="project.partner_id.phone" /><br/>
+                                            </t>
+                                            <t t-if="project.partner_id.mobile" >
+                                                <t t-esc="project.partner_id.mobile" /><br/>
+                                            </t>
+                                            <t t-if="project.partner_id.email" >
+                                                <a t-att-href="'mailto:%s' % (project.partner_id.email)">developpeursducoeur@gmail.com</a>
+                                            </t>
+                                        </address>
+
+
+                                        <div class="underline-heading">
+                                            <h2>Coordinateur</h2>
+                                        </div>
+                                        <div class="" >
+                                            <t t-if="not project.user_id">
+                                                <p>
+                                                    Ce projet n'a toujours pas de coordinateur.
+                                                </p>
+                                                <a t-att-href="'/project/'+slug(project)+'/coordinator/assign'" > 
+                                                    <span>Postuler </span>
+                                                </a>
+                                                <span  class="icon-unshare" /> 
+                                            </t>
+                                            <t t-if="project.user_id">
+                                                <div class="container"  style="overflow_x:hidden;">
+                                                    <img itemprop="image small" class="media-object dp img-circle center-block img img-responsive" 
+                                                        t-att-src="website.image_url(project.user_id, 'image', '40x40')"  
+                                                        name="aboutme" />
+                                                    <ul class="list-inline text-center" title="Coordinateur">
+                                                        <li><h4 t-esc="project.user_id.name" class="two columns"/></li>
+                                                        <li><span t-esc="project.user_id.login"  class="two columns"/></li>
+                                                    </ul>
+                                                </div>
+                                            </t>
+                                        </div>
+
+                                    </div>
+                                    <!-- end four columns-->
+                                </div>
+                                <!-- END Projects Details -->
+
+                                <div contentEditable="false" class="container" style="padding:0">
+                                    <ul class="nav nav-tabs">
+                                        <li class=""><a href="#tab-001" data-toggle="tab">Les tâches</a></li>
+                                        <li class="active"><a href="#tab-002" data-toggle="tab">Les Bénévoles</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" id="tab-001">
+                                            <t t-call="website.kanban">
+                                                <t t-set="model">project.task</t>
+                                                <t t-set="domain" t-value="[('project_id', '=', project.id)]"/>
+                                                <t t-set="column">stage_id</t>
+                                                <t t-set="template">devheart.task_kanban_card</t>
+                                                <t t-set="step">10</t>
+                                                <t t-set="scope">3</t>
+                                            </t>
+
+                                        </div>
+                                        <div class="tab-pane active" id="tab-002">
+                                            <!-- Our Team Widget -->
+                                            <t t-foreach="project.members" t-as="member">
+                                                <t t-call="devheart.team_member"/>
+                                            </t>
+                                            <!-- END Our Team Widget -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+                </t>
+
+
+
+            </template>
+
+        </data>
+    </openerp>

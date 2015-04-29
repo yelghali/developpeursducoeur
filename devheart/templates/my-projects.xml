@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <template id="my-projects-project-item" name="Portfolio project item">
+
+            <t t-set="class_val" t-value=" 'item ten columns' " /> 
+
+            <div t-att-class=" class_val ">
+                <div class="image">
+                    <img src="/devheart/static/src/demo/portfolio/street.jpg" alt=""/>
+                    <a t-att-href="project.website_url or '#'" class="overlay">
+                        <ul class="actions">
+                            <li class="view">
+                                <div class="name"><h3><t t-raw="project.name" /></h3></div>
+                            </li>
+                            <li class="details">
+                                <ul class="tag-labels">
+                                    <t t-foreach="project.skills" t-as="skill" >
+                                        <li><span class="tag-labels"><t t-esc="'  #'+skill.name+' ' " /></span></li>
+                                    </t>
+                                </ul> 
+                            </li>
+
+                            <li>
+                                <span t-if="not project.user_id" class="warning" position="bottom">*ce project a besoin d'un coordinateur</span>    
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </template>
+
+
+        <template id="myprojects" name="Devheart - My Projects" page="True">
+
+            <t t-call="website.layout" >
+
+                <div id="wrap" class="">
+                    <!-- Main Content -->
+                    <section id="main-content">
+
+                        <div class="container">
+
+                            <!-- Page Header -->
+                            <div class="page-header">
+                                <h1>Mes projets </h1>
+                                <section class="sidebar-section " style="text-align:right" >
+                                        <i class="icon-folder-new"></i>
+                                        <a href="/project/new"> Nouveau projet </a>
+                                </section>
+
+
+                            </div>
+                            <!-- End Page Header -->
+                            <!-- Portfolio Index -->
+                            <div class="portfolio-items filterable">
+                                <t t-foreach="projects" t-as="project" >
+                                    <t t-call="devheart.my-projects-project-item" />
+                                </t>
+                            </div>
+                            <!-- END Portfolio Index -->
+
+                        </div> 
+
+                    </section>
+
+                </div>
+            </t>
+        </template>
+
+    </data>
+</openerp>

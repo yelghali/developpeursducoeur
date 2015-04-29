@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<template id="contactus_thanks" inherit_id="website_crm.contactus_thanks" name="Contact us">
+    <xpath expr="//div[@class='container']" position="replace" >
+        <div class="container">
+            <h1>Merci!</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="alert alert-success">
+                        Nous avons bien reçu votre message.
+                        <button type="button" class="close" data-dismiss="alert">&amp;times;</button>
+                    </div>
+                    <p>
+                        Nous reviendrons vers vous prochainement.
+                    </p><p class="mt64">
+                        Si vous avez une urgence, n'hésitez pas à nous contacter via:
+                    </p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-envelope"></i> : <span t-field="res_company.email"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+  </xpath>
+</template>
+       <template id="contact-us" name="Contact us"   inherit_id="website.contactus">
+
+    <xpath expr="//div[@class='container']" position="replace" >
+
+                        <div class="container">
+
+                    <div class="center mt32" style="text-align: center;">
+                        <div>
+                            <p>Contactez-nous pour nous décrire votre besoin ou simplement pour nous poser vos questions.</p>
+                            <p>Nous ferons notre possible pour vous répondre rapidement.</p>
+                        </div>
+                    </div>
+
+                            <form action="/crm/contactus" method="post" class="form-horizontal mt32" enctype="multipart/form-data">
+                                <!--
+                         <t t-foreach="kwargs" t-as="kwarg">
+                        <input type="hidden" t-att-name="kwarg[0]" t-att-value="kwarg[1]"/>
+                    </t> -->
+                    <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
+                        <label class="col-md-3 col-sm-4 control-label" for="contact_name">Votre Nom</label>
+                        <div class="col-md-7 col-sm-8">
+                            <input type="text" class="form-control" name="contact_name" required="True" t-attf-value="#{contact_name or ''}"/>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error and 'phone' in error and 'has-error' or ''}">
+                        <label class="col-md-3 col-sm-4 control-label" for="phone">Tél</label>
+                        <div class="col-md-7 col-sm-8">
+                            <input type="text" class="form-control" name="phone" placeholder="ex. (+33).81.81.37.00" t-attf-value="#{phone or ''}"/>
+                        </div>
+                    </div>
+                    <div name="email_from_container" t-attf-class="form-group #{error and 'email_from' in error and 'has-error' or ''}">
+                        <label class="col-md-3 col-sm-4 control-label" for="email_from">Email</label>
+                        <div class="col-md-7 col-sm-8">
+                            <input type="email" class="form-control" name="email_from" required="True" t-attf-value="#{email_from or ''}"/>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error and 'name' in error and 'has-error' or ''}">
+                        <label class="col-md-3 col-sm-4 control-label" for="name">Objet</label>
+                        <div class="col-md-7 col-sm-8">
+                            <input type="text" class="form-control" name="name" t-attf-value="#{name or ''}"/>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error and 'description' in error and 'has-error' or ''}">
+                        <label class="col-md-3 col-sm-4 control-label" for="description">Votre question</label>
+                        <div class="col-md-7 col-sm-8">
+                            <textarea  class="form-control" name="description" style="min-height: 200px" required="True"><t t-esc="description or ''"/></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7">
+                            <button class="btn btn-primary btn-lg">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+    </div>
+
+
+</xpath>
+        </template>
+
+    </data>
+</openerp>

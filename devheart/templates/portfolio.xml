@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <template id="portfolio-project-list" name="Portfolio project items">
+            <div class="container" style="margin-top:10px;">      
+                <div class="row form-group">
+                    <div class="portfolio-items" >
+                        <t t-foreach="projects" t-as="project" >
+                            <!-- class="panel panel-default"-->
+                            <li  t-att-class=" 'portfolio-item item one-third column vertical-align panel panel-default %s' % adressed_issues_by_project[project.id] "  >
+
+                                <div class="image" style="position:relative;" >
+                                    <div t-if="not project.user_id" class="alert alert-danger" style="position:absolute;width:100%;text-align:center">
+                                        <a href="#" class="close" data-dismiss="alert">
+                                            <![CDATA[ &times;]]>
+                                        </a>
+                                        <small>
+                                            <span >      
+                                                Ce projet a besoin d'un coordinateur!
+                                            </span>
+                                        </small>   
+                                    </div>
+
+                                    <a t-att-href="'/project/%s' % slug(project)" > 
+                                        <t t-if="project.image" > 
+                                            <div itemprop="image" t-field="project.image" 
+                                                t-field-options='{"widget": "image", "class": "small", 
+                                                "style" : "width : 100%; border-radius: 2px 2px 0px 0px;  
+                                                border-radius: 0px; ;overflow: hidden;
+                                                font-size: 1.3em; height: 160px;
+                                                color: rgb(100, 100, 100);"}'/>
+                                        </t>
+                                        <t t-if=" not project.image" > 
+
+                                            <img style="width: 100%; border-radius: 2px 2px 0px 0px;  
+                                                border-radius: 0px; ;overflow: hidden;
+                                                font-size: 1.3em; height: 160px;
+                                                color: rgb(100, 100, 100);
+                                                " 
+                                                src="http://www.coaster33.co.uk/Argo%20-%20Dunstaffnage.jpg" 
+                                                alt="" />
+
+                                        </t>
+                                        <div class="overlay  " style="valign:center; ">
+                                            <ul class="actions row inline-list arrow-list " style="margin-top:-10%; ">
+                                                <t t-foreach="project.skills" t-as="skill" >
+                                                    <li class="col-xs-6" style="text-align:left; padding-left:5%; ">
+                                                        <span class="" ><t t-esc="skill.name" /></span>
+                                                    </li>
+                                                </t>
+                                            </ul>
+                                        </div>
+
+                                    </a>
+                                    <div class="panel-body" style="overflow: hidden;" >
+                                        <h1 style="text-align:center"><small><t t-raw="project.partner_id.name"  /></small></h1>
+                                        <h3 style="text-align:center"><t t-raw="project.name"  /></h3>
+                                        <!--   <div t-field="project.short_desc" />   -->
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <!--     style="padding: 0px 10px;
+                                font-size: 1.3em;
+                                color: rgb(100, 100, 100);
+                                " -->
+                                <div class="panel-footer text-center"  >
+
+                                </div>
+
+                            </li>
+
+
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </template>
+
+
+
+        <template id="state-display" name="Devheart - State Display" >
+            <t t-if="project.state == 'close'" > 
+                <span  class="icon-ok-2" /> 
+                <span style="" class="success" > Projet términé </span>
+            </t>
+            <t  t-if="project.state == 'open'">
+                <span class="icon-repeat"  />  
+                <span  style="" class="warning" > Projet en cours </span> 
+            </t>
+        </template>
+
+
+        <template id="portfolio" name="Portfolio" page="True">
+
+
+
+            <t t-call="website.layout" >
+
+                <div id="wrap" class="">
+                    <!-- Main Content -->
+                    <section id="main-content">
+
+                        <!-- Slider Wrapper -->
+                        <div class="slider-wrap slider-wrap-no-margin">
+
+                            <!-- Revolution Slider Container -->
+                            <div class="fullwidthbanner-container">
+                                <div class="fullwidthbanner tp-simpleresponsive">
+                                    <ul>
+                                        <li data-transition="fade" data-slotamount="8" data-masterspeed="300">
+                                            <img src="/devheart/static/src/assets/img/portfolio-slider-1.jpg" alt=""/>
+                                            <div class="caption lft fadeout big_green"
+                                                data-x="0" 
+                                                data-y="135"
+                                                data-speed="100" 
+                                                data-start="2100" 
+                                                data-easing="easeOutBack">Vous êtes une association?</div>
+                                            <div class="caption lfl fadeout medium_black" 
+                                                data-x="0" 
+                                                data-y="195"
+                                                data-speed="300" 
+                                                data-start="2300" 
+                                                data-easing="easeOutBack">Ce site est fait pour vous.</div>
+                                            <div class="caption randomrotate stb medium_text" 
+                                                style="width: 340px;"
+                                                data-x="0" 
+                                                data-y="255"
+                                                data-speed="600" 
+                                                data-start="2600" 
+                                                data-easing="easeOutBack">
+                                                    <div class="">
+                                                        <a class="btn btn-theme btn-sm btn-min-block"  
+                                                            href="/page/website.contactus">Contactez-nous</a></div>
+                                                    <br/>
+                                                <ul class="check-list">
+                                                    <li style="color:white; font-bold;" ><b>Design de logos, affiches</b></li>
+                                                    <li style="color:white; font-bold;" ><b>Présence sur les réseaux sociaux</b></li>
+                                                    <li style="color:white; font-bold;" ><b>Sites Web</b></li>
+                                                    <li style="color:white; font-bold;" ><b>Applications de gestion</b></li>
+                                                </ul>
+                                            </div>
+                                            <div class="caption sfr ltb" data-x="366" data-y="83" data-start="1200" data-speed="400" data-easing="easeOutBack">
+                                                <img src="/devheart/static/src/assets/img/slides/thumbs.png" alt=""/>
+                                            </div>
+                                        </li>
+                                        <li data-transition="fade" data-slotamount="5" data-masterspeed="300">
+                                            <img src="/devheart/static/src/assets/img/portfolio-slider-2.jpg" alt=""/>
+                                            <div class="caption randomrotate big_pink"
+                                                data-x="545" 
+                                                data-y="135"
+                                                data-speed="400" 
+                                                data-start="1500" 
+                                                data-easing="easeOutBack">Vous êtes bénévole?</div>
+                                            <div class="caption randomrotate medium_black" 
+                                                data-x="608" 
+                                                data-y="195"
+                                                data-speed="400" 
+                                                data-start="1800"
+                                                data-easing="easeOutBack">créez un compte et commencez à contribuer.</div>
+                                            <div class="caption sfr fadeout medium_text" 
+                                                style="text-align: right;"
+                                                data-x="610" 
+                                                data-y="255"
+                                                data-speed="1000" 
+                                                data-start="2300" 
+                                                data-easing="easeOutBack">
+                                                    <div class="">
+                                                        <a class="btn btn-theme btn-sm btn-min-block" href="/web/login">Connexion</a><a class="btn btn-theme btn-sm btn-min-block" href="/web/signup">Inscription</a></div>
+                                            </div>
+                                            <div class="caption sfl randomrotateout" data-x="0" data-y="103" data-start="1000" data-speed="400" data-easing="easeOutBack">
+                                                <img src="/devheart/static/src/assets/img/slides/girl.png" alt=""/>
+                                            </div>
+                                        </li>
+                                        <li data-transition="fade" data-slotamount="5" data-masterspeed="300">
+                                            <img src="/devheart/static/src/assets/img/portfolio-slider-3.jpg" alt=""/>
+                                            <div class="caption randomrotate randomrotateout big_orange"
+                                                data-x="0" 
+                                                data-y="135"
+                                                data-speed="600" 
+                                                data-start="1400" 
+                                                data-easing="easeOutBack">Vous avez des questions?</div>
+                                            <div class="caption sfl randomrotateout medium_black" 
+                                                data-x="0" 
+                                                data-y="195"
+                                                data-speed="600" 
+                                                data-start="1700" 
+                                                data-easing="easeOutBack">Postez les sur le forum. Nous vous répondrons.</div>
+                                            <div class="caption lfb medium_text" 
+                                                data-x="0" 
+                                                data-y="255"
+                                                data-speed="350" 
+                                                data-start="1900" 
+                                                data-easing="linear">
+                                                    <div class="">
+                                                        <a class="btn btn-theme btn-sm btn-min-block" href="/forum/help-1">Forum</a></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="tp-bannertimer"></div> 
+                                </div>
+                            </div>
+                            <!-- END Revolution Slider Container -->
+
+                        </div>
+                        <!-- END Slider Wrapper -->
+
+                        <!-- Headline Widget -->
+                        <div class="headline">
+                            <div class="container">
+                                <div class="sixteen columns">
+                                    <strong>DéveloppeursDuCoeur</strong> est une <span class="underline">plateforme collaborative de gestion de projets</span>, visant à rassembler une communauté de bénévoles, pour développer des projets adressant les besoins d'associations et organismes <span class="underline">à buts non lucratifs</span>.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Headline Widget -->
+                        <!-- start container-->
+                        <div class="container">
+
+                            <!-- Page Header -->
+                            <div class="page-header">
+                                <h1>Les projets </h1>
+                            </div>
+                            <!-- End Page Header -->
+
+                            <!-- Portfolio Filter -->
+                            <!--
+                        <div class="portfolio-filter sixteen-columns">
+                                <ul class="portfolio-filter" >
+                                    <li class="active"><a href="#" data-filter="*">Tous les projets</a></li>
+                                    <t t-foreach="addressed_issues" t-as="ai">
+                                        <li><a href="#" t-att-data-filter=" '.%s' % ai.name"><t t-esc="ai.name" /></a></li>
+                                    </t>
+                                </ul>
+                        </div>
+                        -->
+                        <!-- END Portfolio Filter -->
+
+
+                        <!-- Portfolio Index -->
+                        <div class=" filterable">
+                            <t t-call="devheart.portfolio-project-list" />  
+                        </div>
+                        <!-- END Portfolio Index -->
+
+                    </div> 
+
+                </section>
+
+            </div>
+        </t>
+    </template>
+
+</data>
+</openerp>

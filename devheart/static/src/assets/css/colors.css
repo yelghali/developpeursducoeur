@@ -1,0 +1,136 @@
+/* Save and include the following CSS styles on your page. */
+
+a {
+    color: #77a6ee;
+}
+
+a:hover {
+    color: #3279e5;
+}
+
+#main-nav ul li.active {
+    border-top-color: #77a6ee;
+}
+
+#main-nav ul li.active:before {
+    border-top-color: #77a6ee;
+}
+
+#main-nav ul ul li a:hover {
+    background-color: #77a6ee;
+}
+
+.blog .post .side .post-type {
+    background-color: #77a6ee;
+}
+
+.blog .post .content .meta li a:hover {
+    color: #77a6ee;
+}
+
+.blog .post .wrap .read-more a {
+    background-color: #77a6ee;
+}
+
+.portfolio-filter ul li.active a, 
+.portfolio-filter ul li:hover a {
+    background-color: #77a6ee;
+}
+
+.portfolio-filter ul li.active a:after {
+    border-top-color: #77a6ee;
+}
+
+.portfolio-items .item .image .overlay .actions li a:hover {
+    color: #77a6ee;
+}
+
+.portfolio-row .read-more a {
+    background-color: #77a6ee;
+}
+
+.portfolio .portfolio-meta span:before {
+    background-color: #77a6ee;
+}
+
+.highlight {
+    color: #77a6ee;
+}
+
+.underline {
+    border-bottom-color: #77a6ee;
+}
+
+.underline-heading h1, 
+.underline-heading h2, 
+.underline-heading h3, 
+.underline-heading h4, 
+.underline-heading h5, 
+.underline-heading h6 {
+    border-bottom-color: #77a6ee;
+}
+
+.check-list li:before {
+    color: #77a6ee;
+}
+
+.arrow-list li:before {
+    border-left-color: #77a6ee;
+}
+
+.skill .circles span.filled {
+    background-color: #77a6ee;
+}
+
+.our-team .photo .info {
+    border-left-color: #77a6ee;
+}
+
+.our-team .social ul {
+    border-top-color: #77a6ee;
+}
+
+.service .read-more a {
+    background-color: #77a6ee;
+}
+
+.highlights.bold .highlight-item:hover .icon {
+    background-color: #77a6ee;
+}
+
+.callout .link {
+    background-color: #77a6ee;
+}
+
+.callout .link:before {
+    border-right-color: #77a6ee;
+}
+
+.portfolio-carousel .carousel-nav li a {
+    background-color: #77a6ee;
+}
+
+.latest-blog .overlay .post-type {
+    background-color: #77a6ee;
+}
+
+.accordion .accordion-header {
+    border-left-color: #77a6ee;
+}
+
+.nav-list > .active > a, 
+.nav-list > .active > a:hover, 
+.nav-list > .active > a:focus {
+    background-color: #77a6ee;
+}
+
+.nav-pills > .active > a, 
+.nav-pills > .active > a:hover, 
+.nav-pills > .active > a:focus {
+    background-color: #77a6ee;
+}
+
+.nav .dropdown-toggle .caret {
+    border-top-color: #77a6ee;
+    border-bottom-color: #77a6ee;
+}

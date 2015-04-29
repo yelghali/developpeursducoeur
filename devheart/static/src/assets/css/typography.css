@@ -1,0 +1,270 @@
+
+body {
+    color: #555;
+    font: 14px/1.8 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+img {
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}
+
+p {
+    margin: 0 0 20px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #444;
+    margin: 0 0 .5em;
+    line-height: 1.2;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 32px
+}
+
+h1 {
+    font-size: 21px
+}
+
+h2 {
+    font-size: 18px
+}
+
+h3 {
+    font-size: 15px
+}
+
+h4 {
+    font-size: 14px
+}
+
+h5 {
+    font-size: 13px
+}
+
+h6 {
+    font-size: 12px
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: #444
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+    color: #999;
+    line-height: 1;
+    font-weight: normal;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+    color: #555
+}
+
+.highlight {
+    color: #8ecd44
+}
+
+.page-description {
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    font-size: 24px;
+    line-height: 1.8;
+}
+
+.headline {
+    border-bottom: 1px solid #ddd;
+    background-color: #fcfcfc;
+    font-size: 21px;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.underline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    border-bottom: 2px solid #8ecd44;
+}
+
+a {
+    -webkit-transition: color 0.1s ease-in-out;
+    -moz-transition: color 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.underline-heading {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.underline-heading h1,
+.underline-heading h2,
+.underline-heading h3,
+.underline-heading h4,
+.underline-heading h5,
+.underline-heading h6 {
+    border-bottom: 3px solid #8ecd44;
+    display: inline-block;
+    margin-bottom: -2px;
+    *display: inline;
+    *zoom: 1;
+}
+
+blockquote {
+    border: none;
+    margin: 0 0 20px 0;
+    position: relative;
+    background-color: #eeeeee;
+    padding: 32px 32px 32px 64px;
+}
+
+blockquote small {
+    font-size: 13px;
+    display: block;
+    color: #999999;
+}
+
+blockquote small:before {
+    content: '\2014 \00A0'
+}
+
+blockquote:before {
+    content: "\02EE";
+    color: #444;
+    text-align: center;
+    font-size: 100px;
+    line-height: 1;
+    position: absolute;
+    left: 20px;
+    top: 17px;
+}
+
+.error-page {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.error-page .form {
+    margin-top: 40px
+}
+
+.error-page .error-code {
+    font-size: 180px;
+    line-height: 1.2;
+    color: #333;
+    color: rgba(51, 51, 51, 0.85);
+    text-shadow: 1px 4px 6px #fff, 0 0 0 #000, 1px 4px 6px #fff;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0 0 20px 25px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin-bottom: 0
+}
+
+code,
+pre {
+    padding: 0 3px 2px;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px;
+    color: #333333;
+    border-radius: 3px;
+}
+
+code {
+    padding: 2px 4px;
+    color: #d14;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    white-space: nowrap;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+pre code {
+    padding: 0;
+    color: inherit;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: 0;
+}
+
+address {
+    display: block;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+/* #Media Queries
+================================================== */
+
+@media only screen and (max-width: 480px) { 
+    .page-description {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+}

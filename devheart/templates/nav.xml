@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!--
+        <template id="project-single-breadcrumb" name="Project single breadcrumb" inherit_id="devheart.header" >
+
+            <xpath expr="//ul[@class='breadcrumb2']" position="replace">
+                <ul class="breadcrumb2">
+                    <li><a href="/projects">Home</a> <span class="divider">/</span></li>
+                    <li class="active">Projets</li>
+                </ul>
+            </xpath>
+        </template>
+
+
+
+    <template id="devheart-my-projects-menuitem" name="Devheart - My projects Menuitem" inherit_id="devheart.layout" >
+
+        <xpath expr="//li[@class='dropdown']/ul" position="replace">
+
+            <ul class="dropdown-menu js_usermenu" role="menu">
+                <li><a href="/myprojects" role="menuitem">Mes Projets</a></li>
+                <li class="divider"/>
+
+                <li><a href="/web" role="menuitem">Mon compte</a></li>
+                <li class="divider"/>
+                <li><a t-attf-href="/web/session/logout?redirect=/" role="menuitem">Se déconnecter</a></li>
+            </ul>
+        </xpath>
+    </template>
+
+-->
+
+</data>
+</openerp>

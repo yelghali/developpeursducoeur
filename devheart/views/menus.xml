@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="action_devheart_user_form" model="ir.actions.act_window">
+            <field name="name">Mon porfile</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="domain" eval="[('is_company', '=', True)]" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Ici vous rédigez une description brève de vous-même ainsi que vos coordonnées et vos compétences.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_view_mode_form_devheart_user_form" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="act_window_id" ref="action_devheart_user_form"/>
+            <field name="view_id" ref="base.view_partner_form"/>
+        </record>
+        
+        <record id="action_devheart_get_current_user_partner_form_view" model="ir.actions.server">
+            <field name="name">Mon profile</field>
+            <field name="condition">True</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">action = pool.get('res.partner').get_current_user_partner_form_view()</field> 
+        </record>
+
+
+	<record id="base.menu_main_pm" model="ir.ui.menu" >
+	<field name="groups_id" eval="[  ( 6,0,  [ref('base.group_erp_manager' )])  ]"  />
+	</record>
+
+	<record id="base.menu_reporting" model="ir.ui.menu" >
+	<field name="groups_id" eval="[  ( 6,0,  [ref('base.group_erp_manager' )])  ]"  />
+	</record>
+
+
+        <menuitem id="menu_my_backend_home" name="Acceuil" sequence="2" groups="devheart_res_groups_contributor"    /> 
+        <menuitem id="menu_my_backend_profile" parent="menu_my_backend_home" name="Profiles" sequence="2"    /> 
+        <menuitem id="devheart_get_current_user_partner_form_view" parent="menu_my_backend_profile" 
+            action="action_devheart_get_current_user_partner_form_view" name="Mon profile" sequence="1"   /> 
+
+        <menuitem id="menu_my_backend_projects" parent="menu_my_backend_home" name="Projets" sequence="3"    /> 
+        <menuitem id="devheart_projects" parent="menu_my_backend_projects" 
+            action="project.open_view_project_all" name="Projets" sequence="1"   /> 
+        <menuitem id="devheart_projects_tasks" parent="menu_my_backend_projects" 
+            action="project.action_view_task" name="Tâches" sequence="2"   /> 
+
+    </data>
+</openerp>

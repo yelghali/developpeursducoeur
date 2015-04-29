@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="devheart_user_form_view" model="ir.ui.view">
+            <field name="name">devheart.user.form.view</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form" />
+            <field name="arch" type="xml">
+                <field name="fax" position="replace" />
+                <field name="mobile" position="replace" />
+                <field name="phone" position="replace">
+                    <newline />
+                    <newline />
+                    <field name="parent_id" />
+                    <field name="skills"  widget="many2many_tags" string="Skills"/>
+                </field>
+
+                <xpath expr="//group/field[@name='skills']" position="after">
+                    <notebook>
+                        <page string="Contact" groups="devheart.devheart_res_groups_contributor" >
+                            <group>
+                                <field name="phone" invisible="1" />
+                                <field name="social_twitter" placeholder="http://www.twitter.com" />
+                                <field name="social_facebook" string="Facebook" placeholder="http://www.facebook.com" />
+                                <field name="social_skype" string="Skype"  placeholder="http://www.skype.com"/>
+                                <field name="social_linkedin" string="Linkedin"  placeholder="http://www.linkedin.com"/>
+                            </group>
+                        </page>
+                        <page string="Description">
+                            <field name="biography"  string="Biography"/>
+                        </page>
+
+                    </notebook>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

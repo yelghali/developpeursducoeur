@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	<!-- GOOGLE DRIVE CONFIG -->
+
+
+    	<record id="devheart_google_drive_config_project" model="google.drive.config" >
+    		<field name="name">Cahier de charges</field>
+                <field name="model_id">175</field> <!-- project.project-->
+                <field name="google_drive_template_url"></field>
+                <field name="name_template">Cahier de charges du Projet %(name)s</field>
+    	</record>
+
+        <record id="devheart_google_drive_config_project_task" model="google.drive.config" >
+            <field name="name">Description</field>
+            <field name="model_id">176</field> <!-- project.task-->
+            <field name="google_drive_template_url"></field>
+            <field name="name_template">Description de la tâche %(name)s</field>
+        </record>
+
+    </data>
+</openerp>

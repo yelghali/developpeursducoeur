@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <template id="our_team" name="Our team" page="True">
+
+            <t t-call="website.layout" >
+
+                <div id="wrap" class="">
+
+                    <!-- Main Content -->
+                    <section id="main-content">
+
+                        <div class="container">
+
+                            <!-- Page Header -->
+                            <div class="page-header">
+                                <h1>Our Team <small>the people behind our success</small></h1>
+                            </div>
+                            <!-- End Page Header -->
+
+                            <div class="">
+                                <div class="row">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sollicitudin dolor nec tellus sodales bibendum. Mauris suscipit, ante ut sodales sollicitudin, enim mauris consequat velit, ac feugiat diam magna et elit. Phasellus ac urna quis nulla rhoncus tincidunt. Suspendisse tincidunt porttitor commodo. Quisque bibendum rutrum ipsum, ac ornare urna viverra at. In in velit augue, vitae faucibus orci. Fusce posuere dui eget est dapibus posuere.</p>
+                                </div>
+
+                                <div class="row">
+
+                                    <!-- Our Team Widget -->
+                                    <div class="col-xs-6 our-team">
+                                        <t t-call="devheart.team_member"/>
+                                    </div>
+                                    <!-- END Our Team Widget -->
+
+                                    <!-- Our Team Widget -->
+                                    <div class=" col-xs-6 our-team"> <t t-call="devheart.team_member"/>
+
+                                    </div>
+                                    <!-- END Our Team Widget -->
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</openerp>
