@@ -1,5 +1,5 @@
 id,perm_read,perm_write,active,perm_create,group_id/id,name,model_id/id,perm_unlink
-project_project,True,True,True,False,devheart.devheart_res_groups_contributor,project.model_project_project,project.model_project_project,False
+project_project,True,False,True,False,devheart.devheart_res_groups_contributor,project.model_project_project,project.model_project_project,False
 res_users,True,True,True,False,devheart.devheart_res_groups_contributor,base.model_res_users,base.model_res_users,False
 res_partner,True,True,True,True,devheart.devheart_res_groups_contributor,base.model_res_partner,base.model_res_partner,False
 project_category,True,False,True,True,devheart.devheart_res_groups_contributor,project.model_project_category,project.model_project_category,False

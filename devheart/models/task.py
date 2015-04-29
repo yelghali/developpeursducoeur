@@ -56,9 +56,10 @@ class devheart_task(models.Model):
     def onchange_tags(self):
         #add task tags to project tags
         vals = []
-        for categ in self.categ_ids:
+        obj = self.sudo() #superuserid
+        for categ in obj.categ_ids:
             vals.append((4, categ.id, {}))
-        if vals: self.project_id.write({'skills': vals})
+        if vals: obj.project_id.write({'skills': vals})
 
     categ_ids = fields.Many2many('project.category', onchange="onchange_tags")
 
@@ -66,7 +67,8 @@ class devheart_task(models.Model):
     @api.onchange('user_id')
     def onchange_user_id(self):
         #add user to project members / contributors
-        vals = [( 4, self.user_id.id, {} )]
-        if self.user_id : self.project_id.write({'members': vals})
+        obj = self.sudo() #superuserid
+        vals = [( 4, obj.user_id.id, {} )]
+        if obj.user_id : obj.project_id.write({'members': vals})
 
     user_id = fields.Many2one('res.users', onchange="onchange_user_id", default=False)
