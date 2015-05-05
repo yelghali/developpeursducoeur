@@ -12,10 +12,6 @@ class devheart_project_addressed_issues(models.Model):
     _description = "issues addressed by the current projet"
     _order = 'sequence desc, name'
 
-#    _constraints = [
-#            (osv.osv._check_resursion, 'error! you cannot create recursive
-#            "projectissues".', ['parent_id'])
-#            ]
 
     def name_get(self, cr, uid, ids, context=None):
         if not len(ids):
@@ -110,10 +106,10 @@ class devheart_project(models.Model):
     google_drive_url    = fields.Char(compute='get_google_drive_url', string='Project Google Document', store=False)
     addressed_issues    = fields.Many2many('project.addressed.issues', string='Addressed Issues', help="Projects addressing the same issues can be grouped together")
     skills              = fields.Many2many('project.category', string='Skills', help="The skills required for the project")
-    short_desc          = fields.Text(string='Short desc')
+    short_desc          = fields.Text(string='Slogan')
     long_desc           = fields.Html(string='Long desc')
     customer_contact    = fields.Many2one('res.users', string="Customer contact" )
-    git_path            = fields.Char(default=False)
+    git_path            = fields.Char(default='')
     image               = fields.Binary(string=_("Image"))
     partner_id          = fields.Many2one("res.partner", domain=[ ( 'is_company', '=', True ) ])
 
@@ -123,6 +119,7 @@ class devheart_project(models.Model):
 
     _defaults = {
             'sequence' : _get_default_sequence,
+            'git_path' : False,
             }
 
 

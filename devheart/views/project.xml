@@ -21,13 +21,7 @@
                         <field name="website_url" string="Website URL" />
                     </group>
                 </xpath>
-                <!--
-                <xpath expr="//page[@string='project_stages']" position="after" >
-                    <page string="Vision document">
-                        <field name="description_pad" widget="pad"/>
-                    </page>
-                </xpath>
-                -->
+
                 <xpath expr="//div[@class='oe_title']" position="replace">
                     <field name="image" widget="image" class="oe_avatar oe_left" options="{&quot;preview_image&quot;: &quot;image_medium&quot;}"/>
                     <div class="oe_title">
@@ -40,7 +34,7 @@
                 <xpath expr="//page[@string='Other Info']" position="after" >
                     <page name="website" string="Description Web" >
                         <group>
-                            <!-- <field name="short_desc" /> -->
+                             <field name="short_desc" /> 
                             <field name="long_desc"  attrs="{ 'readonly' : [('user_id','!=',1)] }" string="Description"/>
                         </group>
 

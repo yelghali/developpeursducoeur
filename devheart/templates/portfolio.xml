@@ -56,18 +56,12 @@
                                     <div class="panel-body" style="overflow: hidden;" >
                                         <h1 style="text-align:center"><small><t t-raw="project.partner_id.name"  /></small></h1>
                                         <h3 style="text-align:center"><t t-raw="project.name"  /></h3>
-                                        <!--   <div t-field="project.short_desc" />   -->
-
 
                                     </div>
 
                                 </div>
 
 
-                                <!--     style="padding: 0px 10px;
-                                font-size: 1.3em;
-                                color: rgb(100, 100, 100);
-                                " -->
                                 <div class="panel-footer text-center"  >
 
                                 </div>
@@ -214,7 +208,12 @@
                         <div class="headline">
                             <div class="container">
                                 <div class="sixteen columns">
-                                    <strong>DéveloppeursDuCoeur</strong> est une <span class="underline">plateforme collaborative de gestion de projets</span>, visant à rassembler une communauté de bénévoles, pour développer des projets adressant les besoins d'associations et organismes <span class="underline">à buts non lucratifs</span>.
+                                    <div>  
+                                        <strong>DéveloppeursDuCoeur</strong> est une <span class="underline">plateforme collaborative de gestion de projets</span>, visant à rassembler une communauté de bénévoles, pour développer des projets adressant les besoins d'associations et organismes <span class="underline">à buts non lucratifs</span>.
+                                    </div>
+                                    <div>
+                                        <span><a href="/about">Qui sommes-nous ?</a></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

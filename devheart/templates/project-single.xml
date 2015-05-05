@@ -54,9 +54,9 @@
                                         <div class="col-md-10">
                                             <h1 style="padding:0px 0px 0px">
                                                 <div t-field="project.name" contentEditable="false">le nom de votre projet</div>
-                                                <!--    <div>
+                                                    <div>
                                                     <small t-field="project.short_desc" >ici une description courte de votre projet ou association</small>
-                                                </div> -->
+                                                </div> 
                                             </h1>
 
                                         </div>
@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="tag-labels">
                                         <t t-foreach="project.addressed_issues" t-as="ai">
-                                            <a href="#"><span class="label label-success" style=""><t t-esc="ai.name" /></span></a>
+                                            <a href="#" style="margin-right: 1px;" ><span class="label label-success" style=""><t t-esc="ai.name" /></span></a>
                                         </t>
                                     </div>
                                     <div class="underline-heading">
@@ -114,13 +114,13 @@
                                     </div>
                                     <div class="tag-labels">
                                         <t t-foreach="project.skills" t-as="skill">
-                                            <a href="#"><span class="label label-primary"><t t-esc="skill.name" /></span></a>
+                                            <a href="#" style="margin-right: 1px;" ><span class="label label-primary"><t t-esc="skill.name" /></span></a>
                                         </t>
 
                                     </div>
                                     <br/>
                                     <div class="portfolio-meta">
-                                        <t t-if-="project.git_path">
+                                        <t t-if-="project.git_path != '' or project.git_path != False">
                                             <span>
                                                 <i class="icos-github"></i> 
                                                 <a t-att-href="project.git_path" target="_blank" rel="nofollow" >Lien Github</a>
@@ -171,7 +171,7 @@
                                             </t>
                                         <address style="text-align:center;">
                                             <t t-if="project.partner_id.street">
-                                                <strong><t t-esc="project.partner_id.name"></t></strong><br/>
+                                                <strong><span t-esc="project.partner_id.name" width="100%" ></span></strong><br/>
                                             </t>
                                             <t t-if="project.partner_id.street"> <t t-esc="project.partner_id.street"/><br/></t>
                                             <t t-if="project.partner_id.street2"> <t t-esc="project.partner_id.street2"/><br/></t>
