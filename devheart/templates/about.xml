@@ -15,7 +15,7 @@
                         <div class="headline">
                             <div class="container">
                                 <div class="sixteen columns">
-                                    Développeurs du coeur relie les organismes à buts non lucratifs avec des bénévoles 
+                                    <strong>DéveloppeursDuCoeur</strong> met en relation les organismes à buts non lucratifs avec des bénévoles 
                                     pour adresser leurs besoins et les aider à mieux se développer.
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                                 <li>Présence sur le web: Vidéos de présentation, visibilité sur les réseaux sociaux,..</li>
                                                 <li>Design de logos et affiches</li>
                                                 <li>Développement de sites web</li>
-                                                <li>Développement de loigciels: gestion des contacts, gestion des documents,.</li>
+                                                <li>Développement de logiciels: gestion de la relation client, gestion des documents,..</li>
                                             </ul>
                                     </div>
                                 </div>
@@ -64,9 +64,7 @@
                                         </p>
                                         <p>Nous avons besoins de compétences différentes: 
                                             marketing / communications, community management, développement, design, gestion de projets,..</p>
-                                        <p>
-
-                                        </p>
+                                        
                                         <p>
                                             Pour chaque projet, un bénévole se porte volontaire pour être le <span class="" >coordinateur</span>. Il a pour objectif de tester et valider les tâches et de suivre l'avancement du projet avec l'organisation cliente.
                                         </p>
@@ -80,15 +78,23 @@
                                     <div class="text">
                                         <h3>La plateforme</h3>
                                         <p>
-                                            La plateform intègre plusieurs outils pour faciliter la communication et la collaboration entre les bénévoles. 
+                                            La plateforme intègre plusieurs outils pour faciliter la communication et la collaboration entre les bénévoles. 
                                         </p>
                                             <ul class="check-list" >
                                                 <li>Une messagerie interne, où vous recevez les notifications de vos projets</li>
                                                 <li>Gestion des documents (photos, pdfs, etc.)</li>
                                                 <li>Suivi et validation des tâches</li>
                                                 <li>Un cahier de charge collaboratif (integré à Google Drive)</li>
-                                                <li>Intégration de Github: Associations des tâches aux commits, diffs, logs</li>
+                                                <li>Intégration de Github: association des tâches aux commits, diffs, logs</li>
                                             </ul>
+                                    </div>
+                                    <div class="text">
+                                        <p>
+                                            La plateforme est toujours en cours de développement. N'hésitez pas à nous faire part de vos suggestions et idées.
+                                        </p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-envelope"></i> : <span t-field="res_company.email"/></li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <!-- END Highlights Widget -->
