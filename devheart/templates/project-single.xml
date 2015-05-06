@@ -176,8 +176,8 @@
                                             <t t-if="project.partner_id.street"> <t t-esc="project.partner_id.street"/><br/></t>
                                             <t t-if="project.partner_id.street2"> <t t-esc="project.partner_id.street2"/><br/></t>
                                             <t t-if="project.partner_id.zip"> <t t-esc="project.partner_id.zip +', '" /></t>
-                                            <t t-if="project.partner_id.city"> <t t-esc="project.partner_id.city" /><br/></t>
-                                            <t t-if="project.partner_id.country_id"> <t t-esc="project.partner_id.country_id.name" /><br/></t>
+                                            <t t-if="project.partner_id.city"> <t t-esc="project.partner_id.city" /></t>
+                                            <t t-if="project.partner_id.country_id"> <t t-esc=" ', ' + project.partner_id.country_id.name" /><br/></t>
                                             <t t-if="project.partner_id.phone" >
                                                 <t t-esc="project.partner_id.phone" /><br/>
                                             </t>
@@ -209,8 +209,8 @@
                                                         t-att-src="website.image_url(project.user_id, 'image', '40x40')"  
                                                         name="aboutme" />
                                                     <ul class="list-inline text-center" title="Coordinateur">
-                                                        <li><h4 t-esc="project.user_id.name" class="two columns"/></li>
-                                                        <li><span t-esc="project.user_id.login"  class="two columns"/></li>
+                                                        <li><h4 t-esc="project.user_id.name" /></li>
+                                                        <li><span t-esc="project.user_id.login" /></li>
                                                     </ul>
                                                 </div>
                                             </t>
@@ -221,7 +221,7 @@
                                 </div>
                                 <!-- END Projects Details -->
 
-                                <div contentEditable="false" class="container" style="padding:0">
+                                <div contentEditable="false" class="container" >
                                     <ul class="nav nav-tabs">
                                         <li class=""><a href="#tab-001" data-toggle="tab">Les tâches</a></li>
                                         <li class="active"><a href="#tab-002" data-toggle="tab">Les Bénévoles</a></li>
