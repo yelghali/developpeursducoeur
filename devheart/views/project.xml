@@ -5,6 +5,7 @@
         <record id="project_form_view" model="ir.ui.view">
             <field name="name">project.form.view</field>
             <field name="model">project.project</field>
+            <field name="priority" >10</field>
             <field name="inherit_id" ref="project.edit_project" />
             <field name="arch" type="xml">
                 <field name="partner_id" position="after">
@@ -15,7 +16,7 @@
 
                 <xpath expr="//group[@string='Administration']" position="after">
                     <group string="Tags" attrs="{ 'readonly' : [('user_id','!=',1)] }"  >
-                        <field name="addressed_issues" widget="many2many_tags" string="Type de projet"  groups="devheart.devheart_res_groups_contributor" />
+                        <field name="addressed_issues" widget="many2many_tags" string="Type de projet"   />
                         <field name="skills" widget="many2many_tags" string="Skills"/>
                         <newline/>
                         <field name="website_url" string="Website URL" />
@@ -66,9 +67,9 @@
                                 <field name="alias_name" class="oe_inline" readonly="1" />@<field name="alias_domain" class="oe_inline" readonly="1" />
                             </div>
                         </div>
-                        <label for="alias_model" string="Incoming Emails create"/>
-                        <field name="alias_model" class="oe_inline" nolabel="1" readonly="1"/>
-                        <field name="alias_contact" class="oe_inline" string="Accept Emails From" readonly="1"/>
+                        <label for="alias_model" string="Incoming Emails create" invisible="1" />
+                        <field name="alias_model" class="oe_inline" nolabel="1" readonly="1" invisible="1" />
+                        <field name="alias_contact" class="oe_inline" string="Accept Emails From" readonly="1" invisible="1" />
                     </group>
                 </xpath>
                 <field name="type_ids" position="replace"> 
@@ -87,8 +88,8 @@
             <field name="inherit_id" ref="project.view_task_form2" />
             <field name="arch" type="xml">
 
-                <xpath expr="//page[@string='Description']" position="attributes" >
-                    <attribute name="invisible">True</attribute>
+                <xpath expr="//page[@string='Description']/field" position="replace" >
+                    <field name="long_desc" />
                 </xpath>
                
                 <xpath expr="//field[@name='partner_id']" position="attributes" >

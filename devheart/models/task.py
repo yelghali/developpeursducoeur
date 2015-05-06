@@ -10,6 +10,8 @@ class devheart_task(models.Model):
     _inherit = ["project.task", 'website.seo.metadata']
     _name = "project.task"
 
+    long_desc = fields.Text(string=_("Description"))
+
     @api.one
     def get_google_drive_url(self):
         cr = self.env.cr

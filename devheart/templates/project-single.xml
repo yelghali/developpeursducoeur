@@ -54,7 +54,7 @@
                                         <div class="col-md-10">
                                             <h1 style="padding:0px 0px 0px">
                                                 <div t-field="project.name" contentEditable="false">le nom de votre projet</div>
-                                                    <div>
+                                                    <div t-if="project.short_desc">
                                                     <small t-field="project.short_desc" >ici une description courte de votre projet ou association</small>
                                                 </div> 
                                             </h1>
@@ -185,7 +185,7 @@
                                                 <t t-esc="project.partner_id.mobile" /><br/>
                                             </t>
                                             <t t-if="project.partner_id.email" >
-                                                <a t-att-href="'mailto:%s' % (project.partner_id.email)">developpeursducoeur@gmail.com</a>
+                                                <a t-att-href="'mailto:%s' % (project.partner_id.email)"><t t-esc="project.partner_id.email" /></a>
                                             </t>
                                         </address>
 

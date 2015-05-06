@@ -130,7 +130,10 @@
                                                 data-easing="easeOutBack">
                                                     <div class="">
                                                         <a class="btn btn-theme btn-sm btn-min-block"  
-                                                            href="/page/website.contactus">Contactez-nous</a></div>
+                                                            href="/about">Comment ça marche ?</a>
+                                                        <a class="btn btn-theme btn-sm btn-min-block"  
+                                                            href="/contactus">Contactez-nous</a>
+                                                    </div>
                                                     <br/>
                                                 <ul class="check-list">
                                                     <li style="color:white; font-bold;" ><b>Design de logos, affiches</b></li>

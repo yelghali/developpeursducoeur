@@ -15,8 +15,8 @@
                         <div class="headline">
                             <div class="container">
                                 <div class="sixteen columns">
-                                    <strong>DéveloppeursDuCoeur</strong> met en relation les organismes à buts non lucratifs avec des bénévoles 
-                                    pour adresser leurs besoins et les aider à mieux se développer.
+                                    <strong>DéveloppeursDuCoeur</strong> vise à mettre en relation les associations avec des bénévoles 
+                                    pour leur développer des projets adressant leurs besoins.
                                 </div>
                             </div>
                         </div>
@@ -38,17 +38,19 @@
                                     </div>
                                     <div class="text">
                                         <h3>L'oganisation</h3>
-                                        <p>Vous nous contactez pour étudier un besoin particulier 
-                                            ou pour vous aider à améliorer la gestion de votre activité ou votre visibilité sur le net.</p>
+                                        <p>Vous nous contactez pour étudier un besoin particulier, 
+                                            pour vous aider à améliorer la gestion de votre activité ou votre visibilité sur le net.</p>
                                         <p>
-                                        Nous étudions votre demande et publions un projet pour vous dans la plateforme. 
+                                        Nous étudions ensemble votre demande, et créons un projet pour vous sur la plateforme. 
+                                        <br/>
+                                        Les bénévoles nous aident à développer votre projet.
                                         </p>
                                             Actuellement, nous proposons les projets suivants:
                                             <ul class="check-list" >
-                                                <li>Présence sur le web: Vidéos de présentation, visibilité sur les réseaux sociaux,..</li>
+                                                <li>Présence sur le web: vidéos de présentation, visibilité sur les réseaux sociaux,..</li>
                                                 <li>Design de logos et affiches</li>
                                                 <li>Développement de sites web</li>
-                                                <li>Développement de logiciels: gestion de la relation client, gestion des documents,..</li>
+                                                <li>Développement de logiciels: gestion de la relation client, gestion des événéments,..</li>
                                             </ul>
                                     </div>
                                 </div>
@@ -63,10 +65,10 @@
                                             Que vous soyez débutants ou expérimentés, vous pouvez rejoindre l'équipe d'un projet et commencer à traiter les tâches. 
                                         </p>
                                         <p>Nous avons besoins de compétences différentes: 
-                                            marketing / communications, community management, développement, design, gestion de projets,..</p>
+                                            marketing / communication, community management, développement, design, gestion de projets,..</p>
                                         
                                         <p>
-                                            Pour chaque projet, un bénévole se porte volontaire pour être le <span class="" >coordinateur</span>. Il a pour objectif de tester et valider les tâches et de suivre l'avancement du projet avec l'organisation cliente.
+                                            Pour chaque projet, un bénévole se porte volontaire pour être le <span class="" >coordinateur</span>. Il a pour objectif de tester et valider les tâches, et de suivre l'avancement du projet avec l'organisation cliente.
                                         </p>
                                     </div>
                                 </div>
@@ -85,12 +87,12 @@
                                                 <li>Gestion des documents (photos, pdfs, etc.)</li>
                                                 <li>Suivi et validation des tâches</li>
                                                 <li>Un cahier de charge collaboratif (integré à Google Drive)</li>
-                                                <li>Intégration de Github: association des tâches aux commits, diffs, logs</li>
+                                                <li>Intégration de Github: association des tâches aux commits, diffs, logs (pour les projets de développement informatique)</li>
                                             </ul>
                                     </div>
                                     <div class="text">
                                         <p>
-                                            La plateforme est toujours en cours de développement. N'hésitez pas à nous faire part de vos suggestions et idées.
+                                            La plateforme est toujours en cours d'amélioration. N'hésitez pas à nous faire part de vos suggestions et idées.
                                         </p>
                                         <ul class="list-unstyled">
                                             <li><i class="fa fa-envelope"></i> : <span t-field="res_company.email"/></li>

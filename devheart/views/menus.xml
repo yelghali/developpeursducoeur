@@ -41,7 +41,7 @@
 	</record>
 
 
-        <menuitem id="menu_my_backend_home" name="Acceuil" sequence="2" groups="devheart_res_groups_contributor"    /> 
+        <menuitem id="menu_my_backend_home" name="Acceuil" sequence="3" groups="devheart_res_groups_contributor"    /> 
         <menuitem id="menu_my_backend_profile" parent="menu_my_backend_home" name="Profiles" sequence="2"    /> 
         <menuitem id="devheart_get_current_user_partner_form_view" parent="menu_my_backend_profile" 
             action="action_devheart_get_current_user_partner_form_view" name="Mon profile" sequence="1"   /> 
