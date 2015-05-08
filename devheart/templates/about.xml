@@ -15,7 +15,7 @@
                         <div class="headline">
                             <div class="container">
                                 <div class="sixteen columns">
-                                    <strong>DéveloppeursDuCoeur</strong> vise à mettre en relation les associations avec des bénévoles 
+                                    <strong>DéveloppeursDuCoeur</strong> est une plateforme qui vise à mettre en relation les associations avec des bénévoles 
                                     pour leur développer des projets adressant leurs besoins.
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                                 <li>Présence sur le web: vidéos de présentation, visibilité sur les réseaux sociaux,..</li>
                                                 <li>Design de logos et affiches</li>
                                                 <li>Développement de sites web</li>
-                                                <li>Développement de logiciels: gestion de la relation client, gestion des événéments,..</li>
+                                                <li>Développement de logiciels: gestion de la relation client, gestion des événements,..</li>
                                             </ul>
                                     </div>
                                 </div>
@@ -82,15 +82,34 @@
                                         <p>
                                             La plateforme intègre plusieurs outils pour faciliter la communication et la collaboration entre les bénévoles. 
                                         </p>
-                                            <ul class="check-list" >
-                                                <li>Une messagerie interne, où vous recevez les notifications de vos projets</li>
-                                                <li>Gestion des documents (photos, pdfs, etc.)</li>
-                                                <li>Suivi et validation des tâches</li>
-                                                <li>Un cahier de charge collaboratif (integré à Google Drive)</li>
-                                                <li>Intégration de Github: association des tâches aux commits, diffs, logs (pour les projets de développement informatique)</li>
+                                        <ul class="list" style="margin-left:0" >
+                                            <li>
+                                                <p>
+                                                    <i class="fa fa-comments fa-2x" style="margin-right:0.6em;color: #00ADEF !important;"></i>Une messagerie interne, où vous recevez les notifications de vos projets
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-calendar fa-2x" style="margin-right:0.7em;color: #00ADEF !important;"></i>Suivi et validation des tâches
+                                            </p>
+                                        </li>
+                                        <li><p>
+                                                <i class="fa fa-file fa-2x" style="margin-right:0.9em;color: #00ADEF !important;"></i>Gestion des documents (photos, pdfs, etc.)
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <i class="social_googledrive fa-2x " style="margin-right:0.7em;color: #00ADEF !important;"></i>Un cahier de charge collaboratif (integré à Google Drive)
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <i class="fa fa-github fa-2x" style="margin-right:0.7em;color: #00ADEF !important;"></i>Intégration de Github: association des tâches aux commits, diffs, logs (pour les projets de développement informatique)
+                                </p>
+                            </li>
                                             </ul>
                                     </div>
                                     <div class="text">
+                                        <p></p>
                                         <p>
                                             La plateforme est toujours en cours d'amélioration. N'hésitez pas à nous faire part de vos suggestions et idées.
                                         </p>
