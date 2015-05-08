@@ -31,7 +31,7 @@
         'data/website_menu.xml',
         'data/res_groups.xml',
         'data/res_company.xml',
-        #'data/google_drive.xml',
+        'data/project.xml',
         # Views
         'views/project.xml',
         'views/user.xml',

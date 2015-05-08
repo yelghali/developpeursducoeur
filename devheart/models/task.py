@@ -71,6 +71,24 @@ class devheart_task(models.Model):
         #add user to project members / contributors
         obj = self.sudo() #superuserid
         vals = [( 4, obj.user_id.id, {} )]
-        if obj.user_id : obj.project_id.write({'members': vals})
+        if obj.user_id :
+            obj.project_id.write({'members': vals})
+            # now fetch the record for status = wip (en cours)
+            status_wip = self.env.registry.get('ir.model.data').get_object(
+                    self.env.cr,
+                    self.env.uid,
+                    'devheart',
+                    'project_task_type_wip'
+                )
+            if status_wip: self.stage_id = status_wip.id
+        else:
+            status_wip = self.env.registry.get('ir.model.data').get_object(
+                    self.env.cr,
+                    self.env.uid,
+                    'devheart',
+                    'project_task_type_todo'
+                )
+            if status_wip: self.stage_id = status_wip.id
+
 
     user_id = fields.Many2one('res.users', onchange="onchange_user_id", default=False)

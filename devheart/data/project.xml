@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data >
+
+
+    	<!-- project task stages-->
+    	<record id="project_task_type_todo" model="project.task.type">
+    		<field name="name">A faire</field>
+                <field name="sequence">1</field>
+                <field name="case_default" eval="True" />
+                <field name="fold" eval="False" />
+    	</record>
+
+    	<record id="project_task_type_wip" model="project.task.type">
+    		<field name="name">En cours</field>
+                <field name="sequence">2</field>
+                <field name="case_default" eval="True" />
+                <field name="fold" eval="False" />
+    	</record>
+
+    	<record id="project_task_type_done" model="project.task.type">
+    		<field name="name">Terminée</field>
+                <field name="sequence">3</field>
+                <field name="case_default" eval="True" />
+                <field name="fold" eval="True" />
+    	</record>
+
+
+    </data>
+</openerp>
