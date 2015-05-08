@@ -18,56 +18,62 @@
                     <footer id="footer" style="">
 
 
-                            <!-- Top Footer -->
-                            <div id="footer-top">
-                                <div class="container" id="info" >
-                                    <ul id="products"/> <!-- for faq to work -->
+                        <!-- Top Footer -->
+                        <div id="footer-top">
+                            <div class="container" id="info" >
 
 
-                                    <div class="one-third column" id="newsletter-request">
-                                        <h3>Inscrivez-vous à notre Newsletter</h3>
-                                        <form id="FormNews" action="" method="post" class="form">
-                                            <div class="form-item">
-                                                <input type="email" name="email" id="emailnews" 
-                                                    placeholder="Entrez votre email..."
-                                                     required="required" 
-                                                    />
-                                            </div>
-                                        </form>
-                                        <div id="resultNewsletter" class="warning col-xs-12 "></div>
-                                        <label class="error col-xs-12 text-center" for="emailnews"></label>
-                                    </div>
-
+                                <div class="one-third column" id="newsletter-request">
+                                    <h3>Inscrivez-vous à notre Newsletter</h3>
+                                    <form id="FormNews" action="" method="post" class="form">
+                                        <div class="form-item">
+                                            <input type="email" name="email" id="emailnews" 
+                                                placeholder="Entrez votre email..."
+                                                required="required" 
+                                                />
+                                        </div>
+                                    </form>
+                                    <div id="resultNewsletter" class="warning col-xs-12 "></div>
+                                    <label class="error col-xs-12 text-center" for="emailnews"></label>
                                 </div>
-                            </div>
-                            <!-- END Top Footer -->
 
 
-
-
-                            <!-- Bottom Footer -->
-                            <div id="footer-bottom" style="">
-                                <div class="container">
-
-                                    <div class="eight columns">
-                                        Copyright DéveloppeursDuCoeur 2015. 
-                                    </div>
-                                    <div class="eight columns">
-                                        <ul class="footer-nav">
-                                            <li><a href="/">Acceuil</a></li>
-                                            <li><a href="/forum">Forum</a></li>
-                                            <li class="active"><a href="/page/website.contactus">Contact</a></li>
-                                                <li>
-                                                    <a href="https://github.com/yelghali/developpeursducoeur" target="_blank" rel="nofollow" >
-                                                    Code Source
-                                                </a>
-                                        </li>
-
+                                <div class="two-thirds column" >
+                                    <div class="container"  style="text-align:right;" >
+                                        <h3>Suivez-nous</h3>
+                                        <ul class="links">
+                                            <li><a href="https://twitter.com/DevsDuCoeur" target="_blank" ><i class="fa fa-twitter"></i> Twitter</a></li>
+                                            <li><a  href="https://github.com/yelghali/developpeursducoeur" target="_blank" ><i class="fa fa-github"></i> GitHub</a></li>
                                         </ul>
                                     </div>
-
                                 </div>
+
+                                <ul id="products" style="display:none;visibility:hidden;" /> <!-- for faq to work -->
                             </div>
+                        </div>
+                        <!-- END Top Footer -->
+
+
+
+
+                        <!-- Bottom Footer -->
+                        <div id="footer-bottom" style="">
+                            <div class="container">
+
+                                <div class="eight columns">
+                                    Copyright DéveloppeursDuCoeur 2015. 
+                                </div>
+                                <div class="eight columns">
+                                    <ul class="footer-nav">
+                                        <li><a href="/">Acceuil</a></li>
+                                        <li><a href="/about">A Propos</a></li>
+                                        <li><a href="/forum">Forum</a></li>
+                                        <li class="active"><a href="/page/website.contactus">Contact</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
                         <!-- END Bottom Footer -->
 
 
