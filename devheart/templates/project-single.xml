@@ -7,6 +7,8 @@
         <template id="task_kanban_card" name="TaskKanban">
             <div class="thumbnail" t-att-id="'task_'+str(object_id.id)">
                 <a t-attf-href="/web#model=project.task&amp;id=#{object_id.id}"><span t-field="object_id.name"/></a>
+                <span t-if="object_id.kanban_state == 'done' " class="fs1" aria-hidden="true" data-icon="R" style="color: green; float:right; margin-right:3px;" title="Prête pour validation" ></span>
+                <span  t-if="object_id.kanban_state == 'blocked' " class="fs1" aria-hidden="true" data-icon="Q" style="color: red; float: right; margin-right:3px; " title="Blockée. Besoin d'aide" ></span>
                 <div>
                     <t t-if="object_id.user_id">
                         Assignée à <span t-field="object_id.user_id"/>
