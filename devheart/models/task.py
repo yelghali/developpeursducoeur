@@ -82,13 +82,13 @@ class devheart_task(models.Model):
                 )
             if status_wip: self.stage_id = status_wip.id
         else:
-            status_wip = self.env.registry.get('ir.model.data').get_object(
+            status_todo = self.env.registry.get('ir.model.data').get_object(
                     self.env.cr,
                     self.env.uid,
                     'devheart',
                     'project_task_type_todo'
                 )
-            if status_wip: self.stage_id = status_wip.id
+            if status_todo: self.stage_id = status_todo.id
 
 
     user_id = fields.Many2one('res.users', onchange="onchange_user_id", default=False)

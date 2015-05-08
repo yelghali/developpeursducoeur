@@ -41,10 +41,22 @@ class devheart_project(http.Controller):
     def task_assign(self, project, task, **kwargs):
         cr, uid, context, pool = request.cr, request. uid, request.context, request.registry
         if uid:
+            #update task stage: wip
+            status_wip = pool.get('ir.model.data').get_object(
+                    cr,
+                    uid,
+                    'devheart',
+                    'project_task_type_wip'
+                )
+            task_obj= pool.get("project.task").write(cr, uid, task.id,
+                    {'user_id':uid,
+                        'stage_id': status_wip.id,
+                        },
+                    context=context)
+            # add user to project team
             vals = {
                     'members' : [(4, uid, {})]
                     }
-            task_obj= pool.get("project.task").write(cr, uid, task.id, {'user_id':uid},context=context)
             proj_obj= pool.get("project.project").write(cr, SUPERUSER_ID, task.project_id.id, vals,context=context)
             #return werkzeug.utils.redirect("/project/%s" % ( slug(project)))
             return werkzeug.utils.redirect("/web#model=project.task&id="+str(task.id))
