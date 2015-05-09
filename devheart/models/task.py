@@ -50,8 +50,26 @@ class devheart_task(models.Model):
             url = attachment.url
         self.google_drive_url =  url
 
+    @api.one
+    def get_attached_docs_count(self):
+        cr = self.env.cr
+        uid = self.env.uid
+        registry = self.env.registry
+        context = self.env.context
+        res_id = self.id
 
-    google_drive_url    = fields.Char(compute='get_google_drive_url', string='Task Descripton Google Document', store=False)
+        task_model_id = registry["ir.model"].search(cr, uid, [('model','=', 'project.task')], context=context)[0]
+
+        attach_pool = self.pool.get("ir.attachment")
+        attach_ids = attach_pool.search(cr, uid, [ ('res_id', '=', res_id)])
+
+        self.attached_docs_count = len(attach_ids)
+
+
+    attached_docs_count = fields.Integer(string=_('Attached docs count'), compute='get_attached_docs_count')
+
+
+    google_drive_url    = fields.Char(compute='get_google_drive_url', string=_('Task Descripton Google Document'), store=False)
 
     @api.one
     @api.onchange('categ_ids')

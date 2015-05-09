@@ -199,7 +199,7 @@
                     if (!data) {
                     return;
                     }
-                    $('#newsletter-request').replaceWith("<h3>Inscription reussie. Merci!</h3>");
+                    $('#newsletter-request').replaceWith("<h3>Inscription reussie. Merci !</h3>");
                     $( "#FormNews" ).val('');
                     });
                     event.preventDefault();

@@ -68,7 +68,7 @@
                                         <li><a href="/">Acceuil</a></li>
                                         <li><a href="/about">A Propos</a></li>
                                         <li><a href="/forum">Forum</a></li>
-                                        <li class="active"><a href="/page/website.contactus">Contact</a></li>
+                                        <li class="active"><a href="/contactus">Contact</a></li>
                                     </ul>
                                 </div>
 
