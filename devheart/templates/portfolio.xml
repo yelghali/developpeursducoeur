@@ -81,11 +81,11 @@
         <template id="state-display" name="Devheart - State Display" >
             <t t-if="project.state == 'close'" > 
                 <span  class="icon-ok-2" /> 
-                <span style="" class="success" > Projet términé </span>
+                <span style="" class="success" > Projet términé. </span>
             </t>
             <t  t-if="project.state == 'open'">
                 <span class="icon-repeat"  />  
-                <span  style="" class="warning" > Projet en cours </span> 
+                <span  style="" class="warning" > Projet en cours.. </span> 
             </t>
         </template>
 
