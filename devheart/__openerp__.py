@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "developpeursducoeur",
+    'name': "Developpeursducoeur",
     'version': '1.0',
     'category': 'Dev du coeur' ,
     'sequence': 5,
