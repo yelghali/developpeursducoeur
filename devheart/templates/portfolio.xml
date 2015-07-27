@@ -85,7 +85,7 @@
             </t>
             <t  t-if="project.state == 'open'">
                 <span class="icon-repeat"  />  
-                <span  style="" class="warning" > Projet en C²ours.. </span> 
+                <span  style="" class="warning" > Projet en Cours.. </span> 
             </t>
         </template>
 
